@@ -49,9 +49,8 @@ def main():
 	for i in range(1,len(importFile.index)):
 		resData= addressToCoordinate(importFile.loc[i, 'city'] + " " + importFile.loc[i, 'address1'] )
 		df.loc[i, 'customerId'] = importFile.loc[i, 'customerId']
-		# should choose how to read data
-		# df.loc[i, 'name'] = importFile.loc[i, 'name']
-		# df.loc[i, 'city'] = importFile.loc[i, 'city']
+		df.loc[i, 'address1'] = importFile.loc[i, 'address1']
+		df.loc[i, 'city'] = importFile.loc[i, 'city']
 		df.loc[i, 'country'] = "IL"
 		df.loc[i, 'lng'] = resData['lng']
 		df.loc[i, 'lat'] = resData['lat']
